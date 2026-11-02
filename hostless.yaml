@@ -1,0 +1,5 @@
+build:
+  system: docker
+  dockerfile_path: "./Dockerfile"
+
+start_command: "sh -c \"cp -r /evolution/prisma-original/* /evolution/prisma/ && npm run db:deploy && SERVER_PORT=$PORT node dist/main\""
