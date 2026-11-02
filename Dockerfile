@@ -1,6 +1,9 @@
 FROM evoapicloud/evolution-api:latest
 
-# Cria uma cópia de segurança do diretório prisma original
-RUN cp -r /evolution/prisma /evolution/prisma-original
+# Copia a aplicação para uma pasta temporária gravável
+RUN cp -r /evolution /tmp/evolution
+
+# Define o novo diretório de trabalho
+WORKDIR /tmp/evolution
 
 EXPOSE 8080
